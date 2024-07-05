@@ -312,6 +312,24 @@
 	"HEADERS" : 
 	[
 		[
+			"C:/qt_projects/summer_practice_2024/animal.h",
+			"MU",
+			"EWIEGA46WW/moc_animal.cpp",
+			null
+		],
+		[
+			"C:/qt_projects/summer_practice_2024/gamecontroller.h",
+			"MU",
+			"EWIEGA46WW/moc_gamecontroller.cpp",
+			null
+		],
+		[
+			"C:/qt_projects/summer_practice_2024/hunter.h",
+			"MU",
+			"EWIEGA46WW/moc_hunter.cpp",
+			null
+		],
+		[
 			"C:/qt_projects/summer_practice_2024/mainwindow.h",
 			"MU",
 			"EWIEGA46WW/moc_mainwindow.cpp",
@@ -391,6 +409,9 @@
 	"SETTINGS_FILE" : "C:/qt_projects/summer_practice_2024/build/Desktop_Qt_6_8_0_MSVC2022_64bit-Debug/CMakeFiles/summer_practice_2024_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[ "C:/qt_projects/summer_practice_2024/animal.cpp", "MU", null ],
+		[ "C:/qt_projects/summer_practice_2024/gamecontroller.cpp", "MU", null ],
+		[ "C:/qt_projects/summer_practice_2024/hunter.cpp", "MU", null ],
 		[ "C:/qt_projects/summer_practice_2024/main.cpp", "MU", null ],
 		[ "C:/qt_projects/summer_practice_2024/mainwindow.cpp", "MU", null ],
 		[ "C:/qt_projects/summer_practice_2024/plant.cpp", "MU", null ],

@@ -3,18 +3,14 @@
 
 #include <QMainWindow>
 #include <QGraphicsScene>
-#include <QGraphicsItem>
 #include <QList>
 #include <QTimer>
 #include <QPointF>
+#include "gamecontroller.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
-
-class Plant;
-class Sheep;
-class Wolf;
 
 class MainWindow : public QMainWindow
 {
@@ -25,9 +21,10 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_pushButton_clicked();
-    void moveSheepTowardsPlants();
-    void moveWolfs();
+    void on_startButton_clicked();
+    void updateSpinBoxes();
+    void on_pauseButton_clicked();
+    void on_gameSpeedSlider_valueChanged(int value);
 
 private:
     Ui::MainWindow *ui;
@@ -35,17 +32,10 @@ private:
     QTimer *gameTimer;
     QTimer *plantTimer;
     QTimer *wolfTimer;
-
-    QList<Plant*> plantList;
-    QList<Sheep*> sheepList;
-    QList<Wolf*> wolfList;
+    GameController *gameController;
 
     void initializeScene();
-    void generatePlants(int numPlants, int viewWidth, int viewHeight);
-    void generateSheeps(int numSheeps, int viewWidth, int viewHeight);
-    void generateWolfs(int numWolfs, int viewWidth, int viewHeight);
-    QPointF generateRandomPosition(int viewWidth, int viewHeight);
-    void updateGame();
+    void updateTimerIntervals();
 };
 
 #endif // MAINWINDOW_H

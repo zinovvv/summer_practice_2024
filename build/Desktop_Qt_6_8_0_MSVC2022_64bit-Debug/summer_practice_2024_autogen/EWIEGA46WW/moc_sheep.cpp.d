@@ -1,6 +1,7 @@
 C:/qt_projects/summer_practice_2024/build/Desktop_Qt_6_8_0_MSVC2022_64bit-Debug/summer_practice_2024_autogen/EWIEGA46WW/moc_sheep.cpp: C:/qt_projects/summer_practice_2024/sheep.h \
+  C:/Progi/Qt/6.8.0/msvc2022_64/include/QtCore/QLineF \
+  C:/Progi/Qt/6.8.0/msvc2022_64/include/QtCore/QList \
   C:/Progi/Qt/6.8.0/msvc2022_64/include/QtCore/QObject \
-  C:/Progi/Qt/6.8.0/msvc2022_64/include/QtCore/QPointF \
   C:/Progi/Qt/6.8.0/msvc2022_64/include/QtCore/q20functional.h \
   C:/Progi/Qt/6.8.0/msvc2022_64/include/QtCore/q20iterator.h \
   C:/Progi/Qt/6.8.0/msvc2022_64/include/QtCore/q20memory.h \
@@ -137,7 +138,9 @@ C:/qt_projects/summer_practice_2024/build/Desktop_Qt_6_8_0_MSVC2022_64bit-Debug/
   C:/Progi/Qt/6.8.0/msvc2022_64/include/QtGui/qwindowdefs.h \
   C:/Progi/Qt/6.8.0/msvc2022_64/include/QtGui/qwindowdefs_win.h \
   C:/Progi/Qt/6.8.0/msvc2022_64/include/QtWidgets/QGraphicsPixmapItem \
+  C:/Progi/Qt/6.8.0/msvc2022_64/include/QtWidgets/QGraphicsRectItem \
   C:/Progi/Qt/6.8.0/msvc2022_64/include/QtWidgets/qgraphicsitem.h \
   C:/Progi/Qt/6.8.0/msvc2022_64/include/QtWidgets/qtwidgets-config.h \
   C:/Progi/Qt/6.8.0/msvc2022_64/include/QtWidgets/qtwidgetsexports.h \
-  C:/Progi/Qt/6.8.0/msvc2022_64/include/QtWidgets/qtwidgetsglobal.h
+  C:/Progi/Qt/6.8.0/msvc2022_64/include/QtWidgets/qtwidgetsglobal.h \
+  C:/qt_projects/summer_practice_2024/animal.h

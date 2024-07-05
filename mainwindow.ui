@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1280</width>
-    <height>720</height>
+    <width>1380</width>
+    <height>610</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -32,77 +32,26 @@
    <property name="styleSheet">
     <string notr="true"/>
    </property>
-   <widget class="QSpinBox" name="plantsspinBox">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>20</y>
-      <width>42</width>
-      <height>31</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>121</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="autoFillBackground">
-     <bool>false</bool>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::NoFrame</enum>
-    </property>
-    <property name="text">
-     <string>Количество растений</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton">
-    <property name="geometry">
-     <rect>
-      <x>610</x>
-      <y>10</y>
-      <width>80</width>
-      <height>71</height>
-     </rect>
-    </property>
-    <property name="acceptDrops">
-     <bool>false</bool>
-    </property>
-    <property name="autoFillBackground">
-     <bool>false</bool>
-    </property>
-    <property name="inputMethodHints">
-     <set>Qt::ImhNone</set>
-    </property>
-    <property name="text">
-     <string>Начать игру</string>
-    </property>
-   </widget>
    <widget class="QGraphicsView" name="graphicsView">
     <property name="enabled">
      <bool>true</bool>
     </property>
     <property name="geometry">
      <rect>
-      <x>120</x>
-      <y>100</y>
-      <width>1091</width>
-      <height>571</height>
+      <x>180</x>
+      <y>0</y>
+      <width>1201</width>
+      <height>611</height>
      </rect>
     </property>
     <property name="autoFillBackground">
      <bool>true</bool>
     </property>
     <property name="styleSheet">
-     <string notr="true">    background-image: url(:/images/bg.jpg);
+     <string notr="true">background-image: url(:/images/bg.jpg);
     background-repeat: no-repeat;
     background-position: center;
-    background-attachment: fixed; </string>
+    background-attachment: fixed;</string>
     </property>
     <property name="frameShape">
      <enum>QFrame::StyledPanel</enum>
@@ -147,65 +96,219 @@
      <enum>QGraphicsView::MinimalViewportUpdate</enum>
     </property>
    </widget>
-   <widget class="QSpinBox" name="wolfsspinBox">
+   <widget class="QWidget" name="formLayoutWidget">
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>70</y>
-      <width>42</width>
-      <height>31</height>
+      <y>0</y>
+      <width>178</width>
+      <height>201</height>
      </rect>
     </property>
+    <layout class="QFormLayout" name="formLayout">
+     <property name="sizeConstraint">
+      <enum>QLayout::SetDefaultConstraint</enum>
+     </property>
+     <property name="fieldGrowthPolicy">
+      <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+     </property>
+     <property name="rowWrapPolicy">
+      <enum>QFormLayout::DontWrapRows</enum>
+     </property>
+     <property name="labelAlignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+     </property>
+     <property name="formAlignment">
+      <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+     </property>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::NoFrame</enum>
+       </property>
+       <property name="text">
+        <string>Количество растений</string>
+       </property>
+       <property name="scaledContents">
+        <bool>false</bool>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QSpinBox" name="plantsspinBox">
+       <property name="maximum">
+        <number>1000</number>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_2">
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::NoFrame</enum>
+       </property>
+       <property name="text">
+        <string>Количество волков</string>
+       </property>
+       <property name="scaledContents">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QSpinBox" name="wolfsspinBox">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximum">
+        <number>1000</number>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="label_3">
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::NoFrame</enum>
+       </property>
+       <property name="text">
+        <string>Количество овец</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QSpinBox" name="sheepsspinBox">
+       <property name="maximum">
+        <number>1000</number>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0" colspan="2">
+      <widget class="QLabel" name="label_4">
+       <property name="text">
+        <string>Скорость игры</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0" colspan="2">
+      <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,0,0">
+       <property name="spacing">
+        <number>6</number>
+       </property>
+       <item>
+        <widget class="QLabel" name="label_5">
+         <property name="text">
+          <string>X1</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_6">
+         <property name="text">
+          <string>X2</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_7">
+         <property name="text">
+          <string>X4</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item row="5" column="0" colspan="2">
+      <widget class="QSlider" name="gameSpeedSlider">
+       <property name="minimum">
+        <number>1</number>
+       </property>
+       <property name="maximum">
+        <number>3</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="0" colspan="2">
+      <widget class="QPushButton" name="pauseButton">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>Пауза</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
-   <widget class="QSpinBox" name="sheepsspinBox">
+   <widget class="QPushButton" name="startButton">
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>130</y>
-      <width>42</width>
-      <height>31</height>
+      <y>305</y>
+      <width>181</width>
+      <height>51</height>
      </rect>
     </property>
-   </widget>
-   <widget class="QLabel" name="label_2">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>50</y>
-      <width>121</width>
-      <height>16</height>
-     </rect>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="acceptDrops">
+     <bool>false</bool>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
     </property>
     <property name="autoFillBackground">
      <bool>false</bool>
     </property>
-    <property name="frameShape">
-     <enum>QFrame::NoFrame</enum>
+    <property name="inputMethodHints">
+     <set>Qt::ImhNone</set>
     </property>
     <property name="text">
-     <string>Количество волков</string>
-    </property>
-    <property name="scaledContents">
-     <bool>false</bool>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_3">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>110</y>
-      <width>121</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="autoFillBackground">
-     <bool>false</bool>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::NoFrame</enum>
-    </property>
-    <property name="text">
-     <string>Количество овец</string>
+     <string>Начать игру</string>
     </property>
    </widget>
   </widget>
@@ -213,9 +316,9 @@
  <resources/>
  <connections>
   <connection>
-   <sender>pushButton</sender>
+   <sender>startButton</sender>
    <signal>clicked()</signal>
-   <receiver>pushButton</receiver>
+   <receiver>startButton</receiver>
    <slot>hide()</slot>
    <hints>
     <hint type="sourcelabel">

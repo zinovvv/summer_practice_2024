@@ -1,4 +1,4 @@
-C:/qt_projects/summer_practice_2024/build/Desktop_Qt_6_8_0_MSVC2022_64bit-Debug/summer_practice_2024_autogen/EWIEGA46WW/moc_wolf.cpp: C:/qt_projects/summer_practice_2024/wolf.h \
+C:/qt_projects/summer_practice_2024/build/Desktop_Qt_6_8_0_MSVC2022_64bit-Debug/summer_practice_2024_autogen/EWIEGA46WW/moc_animal.cpp: C:/qt_projects/summer_practice_2024/animal.h \
   C:/Progi/Qt/6.8.0/msvc2022_64/include/QtCore/QLineF \
   C:/Progi/Qt/6.8.0/msvc2022_64/include/QtCore/QList \
   C:/Progi/Qt/6.8.0/msvc2022_64/include/QtCore/QObject \
@@ -142,5 +142,4 @@ C:/qt_projects/summer_practice_2024/build/Desktop_Qt_6_8_0_MSVC2022_64bit-Debug/
   C:/Progi/Qt/6.8.0/msvc2022_64/include/QtWidgets/qgraphicsitem.h \
   C:/Progi/Qt/6.8.0/msvc2022_64/include/QtWidgets/qtwidgets-config.h \
   C:/Progi/Qt/6.8.0/msvc2022_64/include/QtWidgets/qtwidgetsexports.h \
-  C:/Progi/Qt/6.8.0/msvc2022_64/include/QtWidgets/qtwidgetsglobal.h \
-  C:/qt_projects/summer_practice_2024/animal.h
+  C:/Progi/Qt/6.8.0/msvc2022_64/include/QtWidgets/qtwidgetsglobal.h

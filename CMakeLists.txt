@@ -27,6 +27,9 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         plant.h plant.cpp
         sheep.h sheep.cpp
         wolf.h wolf.cpp
+        gamecontroller.h gamecontroller.cpp
+        animal.h animal.cpp
+        hunter.h hunter.cpp
 
 
 

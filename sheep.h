@@ -1,23 +1,13 @@
 #ifndef SHEEP_H
 #define SHEEP_H
 
-#include <QGraphicsPixmapItem>
-#include <QObject>
-#include <QPointF>
+#include "animal.h"
 
-class Sheep : public QObject, public QGraphicsPixmapItem
+class Sheep : public Animal
 {
     Q_OBJECT
 public:
     explicit Sheep(QGraphicsItem *parent = nullptr);
-    const qreal MAX_HEALTH = 50;
-    void moveTowardsPlant(QGraphicsItem* plant);
-    bool hasReachedPlant(QGraphicsItem* plant, qreal threshold = 30.0);
-    QGraphicsRectItem* getHungerBar() const { return hungerBar; }
-    void setHungerBar(QGraphicsRectItem* bar) { hungerBar = bar; }
-
-private:
-    QGraphicsRectItem* hungerBar;
 };
 
 #endif // SHEEP_H

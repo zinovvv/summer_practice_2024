@@ -1,5 +1,7 @@
 C:/qt_projects/summer_practice_2024/build/Desktop_Qt_6_8_0_MSVC2022_64bit-Debug/summer_practice_2024_autogen/EWIEGA46WW/moc_mainwindow.cpp: C:/qt_projects/summer_practice_2024/mainwindow.h \
+  C:/Progi/Qt/6.8.0/msvc2022_64/include/QtCore/QLineF \
   C:/Progi/Qt/6.8.0/msvc2022_64/include/QtCore/QList \
+  C:/Progi/Qt/6.8.0/msvc2022_64/include/QtCore/QObject \
   C:/Progi/Qt/6.8.0/msvc2022_64/include/QtCore/QPointF \
   C:/Progi/Qt/6.8.0/msvc2022_64/include/QtCore/QTimer \
   C:/Progi/Qt/6.8.0/msvc2022_64/include/QtCore/q20functional.h \
@@ -151,7 +153,8 @@ C:/qt_projects/summer_practice_2024/build/Desktop_Qt_6_8_0_MSVC2022_64bit-Debug/
   C:/Progi/Qt/6.8.0/msvc2022_64/include/QtGui/qtransform.h \
   C:/Progi/Qt/6.8.0/msvc2022_64/include/QtGui/qwindowdefs.h \
   C:/Progi/Qt/6.8.0/msvc2022_64/include/QtGui/qwindowdefs_win.h \
-  C:/Progi/Qt/6.8.0/msvc2022_64/include/QtWidgets/QGraphicsItem \
+  C:/Progi/Qt/6.8.0/msvc2022_64/include/QtWidgets/QGraphicsPixmapItem \
+  C:/Progi/Qt/6.8.0/msvc2022_64/include/QtWidgets/QGraphicsRectItem \
   C:/Progi/Qt/6.8.0/msvc2022_64/include/QtWidgets/QGraphicsScene \
   C:/Progi/Qt/6.8.0/msvc2022_64/include/QtWidgets/QMainWindow \
   C:/Progi/Qt/6.8.0/msvc2022_64/include/QtWidgets/qgraphicsitem.h \
@@ -162,4 +165,9 @@ C:/qt_projects/summer_practice_2024/build/Desktop_Qt_6_8_0_MSVC2022_64bit-Debug/
   C:/Progi/Qt/6.8.0/msvc2022_64/include/QtWidgets/qtwidgets-config.h \
   C:/Progi/Qt/6.8.0/msvc2022_64/include/QtWidgets/qtwidgetsexports.h \
   C:/Progi/Qt/6.8.0/msvc2022_64/include/QtWidgets/qtwidgetsglobal.h \
-  C:/Progi/Qt/6.8.0/msvc2022_64/include/QtWidgets/qwidget.h
+  C:/Progi/Qt/6.8.0/msvc2022_64/include/QtWidgets/qwidget.h \
+  C:/qt_projects/summer_practice_2024/animal.h \
+  C:/qt_projects/summer_practice_2024/gamecontroller.h \
+  C:/qt_projects/summer_practice_2024/plant.h \
+  C:/qt_projects/summer_practice_2024/sheep.h \
+  C:/qt_projects/summer_practice_2024/wolf.h
