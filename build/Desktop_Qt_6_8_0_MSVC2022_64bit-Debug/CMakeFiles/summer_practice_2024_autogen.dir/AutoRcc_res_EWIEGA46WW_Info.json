@@ -1,0 +1,28 @@
+{
+	"BUILD_DIR" : "C:/qt_projects/summer_practice_2024/build/Desktop_Qt_6_8_0_MSVC2022_64bit-Debug/summer_practice_2024_autogen",
+	"CMAKE_BINARY_DIR" : "C:/qt_projects/summer_practice_2024/build/Desktop_Qt_6_8_0_MSVC2022_64bit-Debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "C:/qt_projects/summer_practice_2024/build/Desktop_Qt_6_8_0_MSVC2022_64bit-Debug",
+	"CMAKE_CURRENT_SOURCE_DIR" : "C:/qt_projects/summer_practice_2024",
+	"CMAKE_SOURCE_DIR" : "C:/qt_projects/summer_practice_2024",
+	"CROSS_CONFIG" : false,
+	"GENERATOR" : "Ninja",
+	"INCLUDE_DIR" : "C:/qt_projects/summer_practice_2024/build/Desktop_Qt_6_8_0_MSVC2022_64bit-Debug/summer_practice_2024_autogen/include",
+	"INPUTS" : 
+	[
+		"C:/qt_projects/summer_practice_2024/images/wolf.jpg",
+		"C:/qt_projects/summer_practice_2024/images/sheep.jpg",
+		"C:/qt_projects/summer_practice_2024/images/plant.png",
+		"C:/qt_projects/summer_practice_2024/images/bg.jpg"
+	],
+	"LOCK_FILE" : "C:/qt_projects/summer_practice_2024/build/Desktop_Qt_6_8_0_MSVC2022_64bit-Debug/CMakeFiles/summer_practice_2024_autogen.dir/AutoRcc_res_EWIEGA46WW_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "--no-zstd", "-name", "res" ],
+	"OUTPUT_CHECKSUM" : "EWIEGA46WW",
+	"OUTPUT_NAME" : "qrc_res.cpp",
+	"RCC_EXECUTABLE" : "C:/Progi/Qt/6.8.0/msvc2022_64/./bin/rcc.exe",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "C:/qt_projects/summer_practice_2024/build/Desktop_Qt_6_8_0_MSVC2022_64bit-Debug/CMakeFiles/summer_practice_2024_autogen.dir/AutoRcc_res_EWIEGA46WW_Used.txt",
+	"SOURCE" : "C:/qt_projects/summer_practice_2024/res.qrc",
+	"USE_BETTER_GRAPH" : true,
+	"VERBOSITY" : 0
+}

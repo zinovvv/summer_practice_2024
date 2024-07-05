@@ -1,0 +1,8 @@
+C:/qt_projects/summer_practice_2024/build/Desktop_Qt_6_8_0_MSVC2022_64bit-Debug/CMakeFiles/summer_practice_2024.dir
+C:/qt_projects/summer_practice_2024/build/Desktop_Qt_6_8_0_MSVC2022_64bit-Debug/CMakeFiles/edit_cache.dir
+C:/qt_projects/summer_practice_2024/build/Desktop_Qt_6_8_0_MSVC2022_64bit-Debug/CMakeFiles/rebuild_cache.dir
+C:/qt_projects/summer_practice_2024/build/Desktop_Qt_6_8_0_MSVC2022_64bit-Debug/CMakeFiles/list_install_components.dir
+C:/qt_projects/summer_practice_2024/build/Desktop_Qt_6_8_0_MSVC2022_64bit-Debug/CMakeFiles/install.dir
+C:/qt_projects/summer_practice_2024/build/Desktop_Qt_6_8_0_MSVC2022_64bit-Debug/CMakeFiles/install/local.dir
+C:/qt_projects/summer_practice_2024/build/Desktop_Qt_6_8_0_MSVC2022_64bit-Debug/CMakeFiles/summer_practice_2024_autogen_timestamp_deps.dir
+C:/qt_projects/summer_practice_2024/build/Desktop_Qt_6_8_0_MSVC2022_64bit-Debug/CMakeFiles/summer_practice_2024_autogen.dir
