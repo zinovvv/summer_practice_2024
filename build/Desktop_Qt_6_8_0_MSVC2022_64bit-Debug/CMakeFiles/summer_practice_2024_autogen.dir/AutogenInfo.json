@@ -318,6 +318,12 @@
 			null
 		],
 		[
+			"C:/qt_projects/summer_practice_2024/chartwindow.h",
+			"MU",
+			"EWIEGA46WW/moc_chartwindow.cpp",
+			null
+		],
+		[
 			"C:/qt_projects/summer_practice_2024/gamecontroller.h",
 			"MU",
 			"EWIEGA46WW/moc_gamecontroller.cpp",
@@ -410,6 +416,7 @@
 	"SOURCES" : 
 	[
 		[ "C:/qt_projects/summer_practice_2024/animal.cpp", "MU", null ],
+		[ "C:/qt_projects/summer_practice_2024/chartwindow.cpp", "MU", null ],
 		[ "C:/qt_projects/summer_practice_2024/gamecontroller.cpp", "MU", null ],
 		[ "C:/qt_projects/summer_practice_2024/hunter.cpp", "MU", null ],
 		[ "C:/qt_projects/summer_practice_2024/main.cpp", "MU", null ],

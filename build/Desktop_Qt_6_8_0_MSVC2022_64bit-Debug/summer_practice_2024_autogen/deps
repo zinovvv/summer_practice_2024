@@ -385,6 +385,8 @@ summer_practice_2024_autogen/timestamp: \
 	C:/qt_projects/summer_practice_2024/build/Desktop_Qt_6_8_0_MSVC2022_64bit-Debug/CMakeFiles/3.29.3/CMakeCXXCompiler.cmake \
 	C:/qt_projects/summer_practice_2024/build/Desktop_Qt_6_8_0_MSVC2022_64bit-Debug/CMakeFiles/3.29.3/CMakeRCCompiler.cmake \
 	C:/qt_projects/summer_practice_2024/build/Desktop_Qt_6_8_0_MSVC2022_64bit-Debug/CMakeFiles/3.29.3/CMakeSystem.cmake \
+	C:/qt_projects/summer_practice_2024/chartwindow.cpp \
+	C:/qt_projects/summer_practice_2024/chartwindow.h \
 	C:/qt_projects/summer_practice_2024/gamecontroller.cpp \
 	C:/qt_projects/summer_practice_2024/gamecontroller.h \
 	C:/qt_projects/summer_practice_2024/hunter.cpp \
@@ -399,5 +401,6 @@ summer_practice_2024_autogen/timestamp: \
 	C:/qt_projects/summer_practice_2024/sheep.h \
 	C:/qt_projects/summer_practice_2024/wolf.cpp \
 	C:/qt_projects/summer_practice_2024/wolf.h \
+	C:/qt_projects/summer_practice_2024/chartwindow.ui \
 	C:/qt_projects/summer_practice_2024/mainwindow.ui \
 	C:/Progi/Qt/Tools/CMake_64/bin/cmake.exe

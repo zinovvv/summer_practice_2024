@@ -7,7 +7,7 @@
 				{
 					"build" : ".",
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-.-Debug-9c86780d2313842e83b4.json",
+					"jsonFile" : "directory-.-Debug-e48f8ecff02fdef16600.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.16"
@@ -44,7 +44,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "summer_practice_2024::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-summer_practice_2024-Debug-a1a4b0ca0e3acd5e526e.json",
+					"jsonFile" : "target-summer_practice_2024-Debug-12f65590f91e5366aad8.json",
 					"name" : "summer_practice_2024",
 					"projectIndex" : 0
 				},

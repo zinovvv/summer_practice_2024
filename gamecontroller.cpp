@@ -5,18 +5,20 @@
 GameController::GameController(QGraphicsScene *scene, QObject *parent)
     : QObject(parent), scene(scene) {}
 
-QPointF GameController::generateRandomPosition(int viewWidth, int viewHeight)
+QPointF GameController::generateRandomPosition(int minX, int maxX, int minY, int maxY)
 {
-    qreal x = QRandomGenerator::global()->bounded(viewWidth);
-    qreal y = QRandomGenerator::global()->bounded(viewHeight);
+    qreal x = QRandomGenerator::global()->bounded(minX, maxX);
+    qreal y = QRandomGenerator::global()->bounded(minY, maxY);
     return QPointF(x, y);
 }
 
+
 void GameController::generatePlants(int numPlants, int viewWidth, int viewHeight)
 {
+    int minY = viewHeight / 4; // Начало нижней половины
     for (int i = 0; i < numPlants; ++i) {
         Plant *plant = new Plant();
-        QPointF plantPos = generateRandomPosition(viewWidth-20, viewHeight-20);
+        QPointF plantPos = generateRandomPosition(0, viewWidth - 20, minY, viewHeight - 20);
         plant->setPos(plantPos);
         scene->addItem(plant);
         plantList.append(plant);
@@ -25,9 +27,10 @@ void GameController::generatePlants(int numPlants, int viewWidth, int viewHeight
 
 void GameController::generateSheeps(int numSheeps, int viewWidth, int viewHeight)
 {
+    int minY = viewHeight / 4; // Начало нижней половины
     for (int i = 0; i < numSheeps; ++i) {
         Sheep *sheep = new Sheep();
-        QPointF sheepSpawnPos = generateRandomPosition(viewWidth, viewHeight);
+        QPointF sheepSpawnPos = generateRandomPosition(0, viewWidth-70, minY, viewHeight-50);
         sheep->setPos(sheepSpawnPos);
         scene->addItem(sheep);
 
@@ -98,6 +101,7 @@ void GameController::moveWolfs()
         if (wolf->getHungerBar()->rect().width() <= 25) {
             wolf->show();
             QGraphicsItem* nearestSheep = wolf->findNearestItem(sheepList);
+
 
             // Проверка наличия ближайшей овцы
             if (nearestSheep) {

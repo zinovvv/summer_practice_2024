@@ -30,7 +30,7 @@ private:
     QList<Sheep*> sheepList;
     QList<Wolf*> wolfList;
 
-    QPointF generateRandomPosition(int viewWidth, int viewHeight);
+    QPointF generateRandomPosition(int minX, int maxX, int minY, int maxY);
 };
 
 #endif // GAMECONTROLLER_H

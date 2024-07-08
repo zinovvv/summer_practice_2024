@@ -130,6 +130,15 @@ build CMakeFiles\summer_practice_2024.dir\hunter.cpp.obj: CXX_COMPILER__summer_p
   TARGET_COMPILE_PDB = CMakeFiles\summer_practice_2024.dir\
   TARGET_PDB = summer_practice_2024.pdb
 
+build CMakeFiles\summer_practice_2024.dir\chartwindow.cpp.obj: CXX_COMPILER__summer_practice_2024_unscanned_Debug C$:\qt_projects\summer_practice_2024\chartwindow.cpp || cmake_object_order_depends_target_summer_practice_2024
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  FLAGS = -DQT_QML_DEBUG /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 -Zc:__cplusplus -permissive- -utf-8
+  INCLUDES = -IC:\qt_projects\summer_practice_2024\build\Desktop_Qt_6_8_0_MSVC2022_64bit-Debug\summer_practice_2024_autogen\include -external:IC:\Progi\Qt\6.8.0\msvc2022_64\include\QtCore -external:IC:\Progi\Qt\6.8.0\msvc2022_64\include -external:IC:\Progi\Qt\6.8.0\msvc2022_64\mkspecs\win32-msvc -external:IC:\Progi\Qt\6.8.0\msvc2022_64\include\QtWidgets -external:IC:\Progi\Qt\6.8.0\msvc2022_64\include\QtGui -external:W0
+  OBJECT_DIR = CMakeFiles\summer_practice_2024.dir
+  OBJECT_FILE_DIR = CMakeFiles\summer_practice_2024.dir
+  TARGET_COMPILE_PDB = CMakeFiles\summer_practice_2024.dir\
+  TARGET_PDB = summer_practice_2024.pdb
+
 build CMakeFiles\summer_practice_2024.dir\summer_practice_2024_autogen\EWIEGA46WW\qrc_res.cpp.obj: CXX_COMPILER__summer_practice_2024_unscanned_Debug C$:\qt_projects\summer_practice_2024\build\Desktop_Qt_6_8_0_MSVC2022_64bit-Debug\summer_practice_2024_autogen\EWIEGA46WW\qrc_res.cpp || cmake_object_order_depends_target_summer_practice_2024
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
   FLAGS = -DQT_QML_DEBUG /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 -Zc:__cplusplus -permissive- -utf-8
@@ -147,7 +156,7 @@ build CMakeFiles\summer_practice_2024.dir\summer_practice_2024_autogen\EWIEGA46W
 #############################################
 # Link the executable summer_practice_2024.exe
 
-build summer_practice_2024.exe: CXX_EXECUTABLE_LINKER__summer_practice_2024_Debug CMakeFiles\summer_practice_2024.dir\summer_practice_2024_autogen\mocs_compilation.cpp.obj CMakeFiles\summer_practice_2024.dir\main.cpp.obj CMakeFiles\summer_practice_2024.dir\mainwindow.cpp.obj CMakeFiles\summer_practice_2024.dir\plant.cpp.obj CMakeFiles\summer_practice_2024.dir\sheep.cpp.obj CMakeFiles\summer_practice_2024.dir\wolf.cpp.obj CMakeFiles\summer_practice_2024.dir\gamecontroller.cpp.obj CMakeFiles\summer_practice_2024.dir\animal.cpp.obj CMakeFiles\summer_practice_2024.dir\hunter.cpp.obj CMakeFiles\summer_practice_2024.dir\summer_practice_2024_autogen\EWIEGA46WW\qrc_res.cpp.obj | C$:\Progi\Qt\6.8.0\msvc2022_64\lib\Qt6Widgetsd.lib C$:\Progi\Qt\6.8.0\msvc2022_64\lib\Qt6Guid.lib C$:\Progi\Qt\6.8.0\msvc2022_64\lib\Qt6Cored.lib C$:\Progi\Qt\6.8.0\msvc2022_64\lib\Qt6EntryPointd.lib || summer_practice_2024_autogen summer_practice_2024_autogen_timestamp_deps
+build summer_practice_2024.exe: CXX_EXECUTABLE_LINKER__summer_practice_2024_Debug CMakeFiles\summer_practice_2024.dir\summer_practice_2024_autogen\mocs_compilation.cpp.obj CMakeFiles\summer_practice_2024.dir\main.cpp.obj CMakeFiles\summer_practice_2024.dir\mainwindow.cpp.obj CMakeFiles\summer_practice_2024.dir\plant.cpp.obj CMakeFiles\summer_practice_2024.dir\sheep.cpp.obj CMakeFiles\summer_practice_2024.dir\wolf.cpp.obj CMakeFiles\summer_practice_2024.dir\gamecontroller.cpp.obj CMakeFiles\summer_practice_2024.dir\animal.cpp.obj CMakeFiles\summer_practice_2024.dir\hunter.cpp.obj CMakeFiles\summer_practice_2024.dir\chartwindow.cpp.obj CMakeFiles\summer_practice_2024.dir\summer_practice_2024_autogen\EWIEGA46WW\qrc_res.cpp.obj | C$:\Progi\Qt\6.8.0\msvc2022_64\lib\Qt6Widgetsd.lib C$:\Progi\Qt\6.8.0\msvc2022_64\lib\Qt6Guid.lib C$:\Progi\Qt\6.8.0\msvc2022_64\lib\Qt6Cored.lib C$:\Progi\Qt\6.8.0\msvc2022_64\lib\Qt6EntryPointd.lib || summer_practice_2024_autogen summer_practice_2024_autogen_timestamp_deps
   FLAGS = -DQT_QML_DEBUG /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
   LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:windows
   LINK_LIBRARIES = C:\Progi\Qt\6.8.0\msvc2022_64\lib\Qt6Widgetsd.lib  C:\Progi\Qt\6.8.0\msvc2022_64\lib\Qt6Guid.lib  C:\Progi\Qt\6.8.0\msvc2022_64\lib\Qt6Cored.lib  mpr.lib  userenv.lib  C:\Progi\Qt\6.8.0\msvc2022_64\lib\Qt6EntryPointd.lib  shell32.lib  d3d11.lib  dxgi.lib  dxguid.lib  d3d12.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
@@ -223,7 +232,7 @@ build summer_practice_2024_autogen_timestamp_deps: phony
 #############################################
 # Utility command for summer_practice_2024_autogen
 
-build summer_practice_2024_autogen: phony CMakeFiles\summer_practice_2024_autogen summer_practice_2024_autogen\include\ui_mainwindow.h summer_practice_2024_autogen\timestamp summer_practice_2024_autogen\mocs_compilation.cpp summer_practice_2024_autogen_timestamp_deps
+build summer_practice_2024_autogen: phony CMakeFiles\summer_practice_2024_autogen summer_practice_2024_autogen\include\ui_mainwindow.h summer_practice_2024_autogen\include\ui_chartwindow.h summer_practice_2024_autogen\timestamp summer_practice_2024_autogen\mocs_compilation.cpp summer_practice_2024_autogen_timestamp_deps
 
 
 #############################################
@@ -249,7 +258,7 @@ build summer_practice_2024_autogen\EWIEGA46WW\qrc_res.cpp | ${cmake_ninja_workdi
 #############################################
 # Phony custom command for CMakeFiles\summer_practice_2024_autogen
 
-build CMakeFiles\summer_practice_2024_autogen summer_practice_2024_autogen\include\ui_mainwindow.h | ${cmake_ninja_workdir}CMakeFiles\summer_practice_2024_autogen ${cmake_ninja_workdir}summer_practice_2024_autogen\include\ui_mainwindow.h: phony summer_practice_2024_autogen\timestamp || summer_practice_2024_autogen_timestamp_deps
+build CMakeFiles\summer_practice_2024_autogen summer_practice_2024_autogen\include\ui_mainwindow.h summer_practice_2024_autogen\include\ui_chartwindow.h | ${cmake_ninja_workdir}CMakeFiles\summer_practice_2024_autogen ${cmake_ninja_workdir}summer_practice_2024_autogen\include\ui_mainwindow.h ${cmake_ninja_workdir}summer_practice_2024_autogen\include\ui_chartwindow.h: phony summer_practice_2024_autogen\timestamp || summer_practice_2024_autogen_timestamp_deps
 
 # =============================================================================
 # Target aliases.
