@@ -26,19 +26,27 @@ protected:
     QGraphicsRectItem* hungerBar = nullptr;
 };
 
-template<typename T>
+template <typename T>
 QGraphicsItem* Animal::findNearestItem(const QList<T*>& itemList)
 {
+    if (itemList.isEmpty()) {
+        return nullptr;
+    }
+
     QGraphicsItem* nearestItem = nullptr;
-    qreal minDistance = std::numeric_limits<qreal>::max();
+    double minDistance = std::numeric_limits<double>::max();
     for (auto item : itemList) {
-        qreal distance = QLineF(pos(), item->pos()).length();
-        if (distance < minDistance) {
-            minDistance = distance;
-            nearestItem = item;
+        if (item) {
+            double distance = QLineF(pos(), item->pos()).length();
+            if (distance < minDistance) {
+                minDistance = distance;
+                nearestItem = item;
+            }
         }
     }
     return nearestItem;
 }
+
+
 
 #endif // ANIMAL_H

@@ -14,6 +14,9 @@
    <string>Form</string>
   </property>
   <widget class="QGraphicsView" name="chartView">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
    <property name="geometry">
     <rect>
      <x>0</x>
@@ -21,6 +24,12 @@
      <width>341</width>
      <height>211</height>
     </rect>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>341</width>
+     <height>211</height>
+    </size>
    </property>
   </widget>
  </widget>

@@ -22,14 +22,20 @@ public:
     QList<Plant*> getPlantList() const; // Метод доступа к списку растений
     QList<Sheep*> getSheepList() const; // Метод доступа к списку овец
     QList<Wolf*> getWolfList() const;   // Метод доступа к списку волков
-
+    void setSheepBirthRate(int rate);
+    void setWolfBirthRate(int rate);
+    void resetTotalEatenPlantCount();
+    void resetTotalEatenSheepCount();
+    void reset();
 private:
     int totalEatenSheepCount = 0;
+    int totalEatenPlantCount = 0;
     QGraphicsScene *scene;
     QList<Plant*> plantList;
     QList<Sheep*> sheepList;
     QList<Wolf*> wolfList;
-
+    int sheepBirthRate;
+    int wolfBirthRate;
     QPointF generateRandomPosition(int minX, int maxX, int minY, int maxY);
 };
 

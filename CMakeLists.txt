@@ -31,13 +31,6 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         animal.h animal.cpp
         hunter.h hunter.cpp
         chartwindow.h chartwindow.cpp chartwindow.ui
-
-
-
-
-
-
-
     )
 # D
 #    set_property(TARGET summer_practice_2024 APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

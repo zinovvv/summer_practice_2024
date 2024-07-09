@@ -10,6 +10,7 @@ chartwindow::chartwindow(QGraphicsScene *mainScene, GameController *controller, 
     , ui(new Ui::chartwindow)
 {
     ui->setupUi(this);
+    setFixedSize(width(), height());
     setWindowTitle("Графики популяций");
     chartScene = new QGraphicsScene(this);
     ui->chartView->setScene(chartScene);
@@ -95,4 +96,3 @@ void chartwindow::updateChart()
     addLegendItem("Овцы", Qt::blue, 80);
     addLegendItem("Волки", Qt::red, 140);
 }
-

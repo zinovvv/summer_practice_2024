@@ -30,6 +30,12 @@ private slots:
     void on_plantSpeedSlider_valueChanged(int value);
     void on_showChartButton_clicked();
 
+    void on_sheepBirthRateSlider_valueChanged(int value);
+
+    void on_wolfBirthRateSlider_valueChanged(int value);
+
+    void on_restartButton_clicked();
+
 private:
     Ui::MainWindow *ui;
     QGraphicsScene *scene;
@@ -39,7 +45,9 @@ private:
     QTimer *wolfTimer;
     GameController *gameController;
     int currentPlantTimerInterval;
-
+    int currentGameTimerInterval;
+    int currentWolfTimerInterval;
+    int intervalMultiplier;
     void initializeScene();
     void updateTimerIntervals();
 

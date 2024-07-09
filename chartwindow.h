@@ -22,7 +22,6 @@ public:
     explicit chartwindow(QGraphicsScene *mainScene, GameController *controller, QWidget *parent = nullptr);
     void pauseChartUpdateTimer();
     void resumeChartUpdateTimer();
-
     ~chartwindow();
 
 private slots:

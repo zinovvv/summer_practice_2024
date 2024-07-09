@@ -17,7 +17,9 @@ MainWindow::MainWindow(QWidget *parent)
     ui->graphicsView->setScene(scene);
     ui->showChartButton->hide();
     currentPlantTimerInterval = 1500;
-
+    currentGameTimerInterval = 28;
+    currentWolfTimerInterval = 20;
+    intervalMultiplier=1;
     gameController = new GameController(scene, this);
 
     gameTimer = new QTimer(this);
@@ -48,6 +50,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::initializeScene()
 {
+    chartWindow = new chartwindow(scene, gameController, this);
     QRectF viewRect(0, 0, ui->graphicsView->width()-10, ui->graphicsView->height()-10);
     scene->setSceneRect(viewRect);
     scene->clear();
@@ -64,14 +67,15 @@ void MainWindow::initializeScene()
     int numSheeps = ui->sheepsspinBox->value();
     gameController->generateSheeps(numSheeps, viewWidth, viewHeight);
 
-    gameTimer->start(30);
-    plantTimer->start(currentPlantTimerInterval);
-    wolfTimer->start(20);
+    gameTimer->start(currentGameTimerInterval);
+    plantTimer->start(currentPlantTimerInterval/intervalMultiplier);
+    wolfTimer->start(currentWolfTimerInterval);
 
 }
 
 void MainWindow::on_startButton_clicked()
 {
+    ui->restartButton->setEnabled(true);
     ui->showChartButton->show();
     ui->plantsspinBox->setDisabled(true);
     ui->sheepsspinBox->setDisabled(true);
@@ -89,28 +93,27 @@ void MainWindow::updateSpinBoxes()
 
 void MainWindow::updateTimerIntervals()
 {
-    int intervalMultiplier = 1;
-
     switch (ui->gameSpeedSlider->value()) {
     case 1:
-        gameTimer->setInterval(28 * intervalMultiplier);
-        wolfTimer->setInterval(20 * intervalMultiplier);
+        gameTimer->setInterval(currentGameTimerInterval);
+        wolfTimer->setInterval(currentWolfTimerInterval);
         plantTimer->setInterval(currentPlantTimerInterval);
         break;
     case 2:
-        gameTimer->setInterval(14 * intervalMultiplier);
-        wolfTimer->setInterval(10 * intervalMultiplier);
-        plantTimer->setInterval(currentPlantTimerInterval/2);
+        gameTimer->setInterval(currentGameTimerInterval);
+        wolfTimer->setInterval(currentWolfTimerInterval);
+        plantTimer->setInterval(currentPlantTimerInterval/intervalMultiplier);
 
         break;
     case 3:
-        gameTimer->setInterval(7 * intervalMultiplier);
-        wolfTimer->setInterval(5 * intervalMultiplier);
-        plantTimer->setInterval(currentPlantTimerInterval/4);
+        gameTimer->setInterval(currentGameTimerInterval);
+        wolfTimer->setInterval(currentWolfTimerInterval);
+        plantTimer->setInterval(currentPlantTimerInterval/intervalMultiplier);
         break;
     default:
         break;
     }
+
 
 }
 
@@ -135,6 +138,24 @@ void MainWindow::on_pauseButton_clicked()
 
 void MainWindow::on_gameSpeedSlider_valueChanged(int value)
 {
+    int baseGameInterval=28;
+    int baseWolfInterval=20;
+    switch(value){
+    case 1:
+        intervalMultiplier = 1;
+        break;
+    case 2:
+        intervalMultiplier = 2;
+        break;
+    case 3:
+        intervalMultiplier = 4;
+        break;
+    default:
+        intervalMultiplier=1;
+        break;
+    }
+    currentGameTimerInterval=baseGameInterval/intervalMultiplier;
+    currentWolfTimerInterval=baseWolfInterval/intervalMultiplier;
     updateTimerIntervals();
 }
 
@@ -160,8 +181,95 @@ void MainWindow::on_plantSpeedSlider_valueChanged(int value)
     updateTimerIntervals();
 }
 
+
 void MainWindow::on_showChartButton_clicked()
 {
-    chartwindow *chartWindow = new chartwindow(scene, gameController, this);
     chartWindow->show();
 }
+
+// В файле mainwindow.cpp
+void MainWindow::on_sheepBirthRateSlider_valueChanged(int value)
+{
+    int sheepBirthRate = 1; // Значение по умолчанию
+
+    switch (value) {
+    case 1:
+        sheepBirthRate = 1;
+        break;
+    case 2:
+        sheepBirthRate = 2;
+        break;
+    case 3:
+        sheepBirthRate = 3;
+        break;
+    default:
+        break;
+    }
+    gameController->resetTotalEatenPlantCount();
+    gameController->setSheepBirthRate(sheepBirthRate);
+}
+
+void MainWindow::on_wolfBirthRateSlider_valueChanged(int value)
+{
+    int wolfBirthRate = 1; // Значение по умолчанию
+
+    switch (value) {
+    case 1:
+        wolfBirthRate = 1;
+        break;
+    case 2:
+        wolfBirthRate = 2;
+        break;
+    case 3:
+        wolfBirthRate = 3;
+        break;
+    default:
+        break;
+    }
+    gameController->resetTotalEatenSheepCount();
+    gameController->setWolfBirthRate(wolfBirthRate);
+}
+
+void MainWindow::on_restartButton_clicked()
+{
+    ui->restartButton->setEnabled(false);
+    // Останавливаем все таймеры
+    gameTimer->stop();
+    plantTimer->stop();
+    wolfTimer->stop();
+    chartWindow->pauseChartUpdateTimer();
+
+    // Закрываем и удаляем окно chartWindow
+    if (chartWindow) {
+        chartWindow->close(); // Закрываем окно
+        delete chartWindow;   // Удаляем объект
+        chartWindow = nullptr;
+    }
+
+    // Очищаем сцену
+    scene->clear();
+
+    // Очищаем сцену
+    scene->clear();
+
+    // Сбрасываем контроллер
+    gameController->reset();
+
+    // Разблокируем спин-боксы
+    ui->plantsspinBox->setDisabled(false);
+    ui->sheepsspinBox->setDisabled(false);
+    ui->wolfsspinBox->setDisabled(false);
+
+    // Скрываем кнопку графика
+    ui->showChartButton->hide();
+
+    // Сбрасываем текст на кнопке паузы
+    ui->pauseButton->setText("Пауза");
+    ui->pauseButton->setEnabled(false);
+    ui->startButton->show();
+
+    ui->wolfsspinBox->setValue(0);
+    ui->plantsspinBox->setValue(0);
+    ui->sheepsspinBox->setValue(0);
+}
+
