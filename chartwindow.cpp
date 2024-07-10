@@ -1,52 +1,45 @@
 #include "chartwindow.h"
 #include "ui_chartwindow.h"
-#include "gamecontroller.h"
-#include <QRandomGenerator>
-#include <QPointF>
-#include <QTimer>
 
 chartwindow::chartwindow(QGraphicsScene *mainScene, GameController *controller, QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::chartwindow)
+    , gameController(controller)
+    , chartGraphicsScene(new QGraphicsScene(this))
+    , chartRefreshTimer(new QTimer(this))
 {
     ui->setupUi(this);
     setFixedSize(width(), height());
     setWindowTitle("Графики популяций");
-    chartScene = new QGraphicsScene(this);
-    ui->chartView->setScene(chartScene);
+    ui->chartView->setScene(chartGraphicsScene);
 
-    // Используем переданный контроллер
-    gameController = controller;
-
-    chartUpdateTimer = new QTimer(this);
-    connect(chartUpdateTimer, &QTimer::timeout, this, &chartwindow::updateChart);
-    chartUpdateTimer->start(100);
+    connect(chartRefreshTimer, &QTimer::timeout, this, &chartwindow::refreshChart);
+    chartRefreshTimer->start(100);
 }
 
 chartwindow::~chartwindow()
 {
     delete ui;
-    delete chartScene;
+    delete chartGraphicsScene;
 }
 
 void chartwindow::pauseChartUpdateTimer()
 {
-    if (chartUpdateTimer && chartUpdateTimer->isActive()) {
-        chartUpdateTimer->stop();
+    if (chartRefreshTimer && chartRefreshTimer->isActive()) {
+        chartRefreshTimer->stop();
     }
 }
 
 void chartwindow::resumeChartUpdateTimer()
 {
-    if (chartUpdateTimer && !chartUpdateTimer->isActive()) {
-        chartUpdateTimer->start();
-        updateChart(); // Если нужно обновить чарт при возобновлении
+    if (chartRefreshTimer && !chartRefreshTimer->isActive()) {
+        chartRefreshTimer->start();
+        refreshChart();
     }
 }
 
-void chartwindow::updateChart()
+void chartwindow::refreshChart()
 {
-
     plantData.push_back(gameController->getPlantList().size());
     sheepData.push_back(gameController->getSheepList().size());
     wolfData.push_back(gameController->getWolfList().size());
@@ -55,7 +48,7 @@ void chartwindow::updateChart()
     if (sheepData.size() > 50) sheepData.erase(sheepData.begin());
     if (wolfData.size() > 50) wolfData.erase(wolfData.begin());
 
-    chartScene->clear();
+    chartGraphicsScene->clear();
 
     int width = ui->chartView->width();
     int height = ui->chartView->height();
@@ -70,7 +63,7 @@ void chartwindow::updateChart()
             int y1 = margin + graphHeight - data[i - 1] * graphHeight / 100;
             int x2 = margin + i * graphWidth / (data.size() - 1);
             int y2 = margin + graphHeight - data[i] * graphHeight / 100;
-            chartScene->addLine(x1, y1, x2, y2, pen);
+            chartGraphicsScene->addLine(x1, y1, x2, y2, pen);
         }
     };
 
@@ -78,18 +71,17 @@ void chartwindow::updateChart()
     drawGraph(sheepData, Qt::blue);
     drawGraph(wolfData, Qt::red);
 
-    // Добавляем легенду
     int legendX = margin;
     int legendY = margin + graphHeight + 10;
 
     auto addLegendItem = [&](const QString& text, QColor color, int offsetX) {
         QGraphicsRectItem* rect = new QGraphicsRectItem(legendX + offsetX, legendY, 10, 10);
         rect->setBrush(QBrush(color));
-        chartScene->addItem(rect);
+        chartGraphicsScene->addItem(rect);
 
         QGraphicsTextItem* label = new QGraphicsTextItem(text);
         label->setPos(legendX + offsetX + 15, legendY - 5);
-        chartScene->addItem(label);
+        chartGraphicsScene->addItem(label);
     };
 
     addLegendItem("Растения", Qt::green, 0);

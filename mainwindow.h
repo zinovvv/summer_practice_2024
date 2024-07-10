@@ -3,9 +3,7 @@
 
 #include <QMainWindow>
 #include <QGraphicsScene>
-#include <QList>
 #include <QTimer>
-#include <QPointF>
 #include "gamecontroller.h"
 #include "chartwindow.h"
 
@@ -18,39 +16,36 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    MainWindow(QWidget *parent = nullptr);
+    explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
 private slots:
-    void on_startButton_clicked();
+    void handleStartButtonClick();
     void updateSpinBoxes();
-    void on_pauseButton_clicked();
-    void on_gameSpeedSlider_valueChanged(int value);
-
-    void on_plantSpeedSlider_valueChanged(int value);
-    void on_showChartButton_clicked();
-
-    void on_sheepBirthRateSlider_valueChanged(int value);
-
-    void on_wolfBirthRateSlider_valueChanged(int value);
-
-    void on_restartButton_clicked();
+    void handlePauseButtonClick();
+    void handleGameSpeedSliderChange(int value);
+    void handlePlantSpeedSliderChange(int value);
+    void handleShowChartButtonClick();
+    void handleSheepBirthRateSliderChange(int value);
+    void handleWolfBirthRateSliderChange(int value);
+    void handleRestartButtonClick();
+    void checkForEndGameCondition();
 
 private:
     Ui::MainWindow *ui;
     QGraphicsScene *scene;
     chartwindow *chartWindow;
-    QTimer *gameTimer;
-    QTimer *plantTimer;
-    QTimer *wolfTimer;
+    QTimer *sheepMovementTimer;
+    QTimer *plantGenerationTimer;
+    QTimer *wolfMovementTimer;
+    QTimer *endGameCheckTimer;
     GameController *gameController;
     int currentPlantTimerInterval;
     int currentGameTimerInterval;
     int currentWolfTimerInterval;
     int intervalMultiplier;
-    void initializeScene();
-    void updateTimerIntervals();
-
+    void initializeGameScene();
+    void updateAllTimerIntervals();
 };
 
 #endif // MAINWINDOW_H

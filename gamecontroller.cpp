@@ -3,7 +3,7 @@
 #include <QLineF>
 
 GameController::GameController(QGraphicsScene *scene, QObject *parent)
-    : QObject(parent), scene(scene), sheepBirthRate(1), wolfBirthRate(1), totalEatenSheepCount(0) {}
+    : QObject(parent), scene(scene), totalSheepEaten(0), totalPlantsEaten(0), sheepBirthRate(1), wolfBirthRate(1) {}
 
 void GameController::setSheepBirthRate(int rate)
 {
@@ -22,10 +22,9 @@ QPointF GameController::generateRandomPosition(int minX, int maxX, int minY, int
     return QPointF(x, y);
 }
 
-
-void GameController::generatePlants(int numPlants, int viewWidth, int viewHeight)
+void GameController::spawnPlants(int numPlants, int viewWidth, int viewHeight)
 {
-    int minY = viewHeight / 4; // Начало нижней половины
+    int minY = viewHeight / 4;
     for (int i = 0; i < numPlants; ++i) {
         Plant *plant = new Plant();
         QPointF plantPos = generateRandomPosition(0, viewWidth - 20, minY, viewHeight - 20);
@@ -35,44 +34,44 @@ void GameController::generatePlants(int numPlants, int viewWidth, int viewHeight
     }
 }
 
-void GameController::generateSheeps(int numSheeps, int viewWidth, int viewHeight)
+void GameController::spawnSheep(int numSheep, int viewWidth, int viewHeight)
 {
-    int minY = viewHeight / 4; // Начало нижней половины
-    for (int i = 0; i < numSheeps; ++i) {
+    int minY = viewHeight / 4;
+    for (int i = 0; i < numSheep; ++i) {
         Sheep *sheep = new Sheep();
-        QPointF sheepSpawnPos = generateRandomPosition(0, viewWidth-70, minY, viewHeight-50);
+        QPointF sheepSpawnPos = generateRandomPosition(0, viewWidth - 70, minY, viewHeight - 50);
         sheep->setPos(sheepSpawnPos);
         scene->addItem(sheep);
 
-        QGraphicsRectItem* hungerBar = new QGraphicsRectItem(sheep);
-        hungerBar->setRect(10, -5, sheep->MAX_HEALTH, 5);
-        hungerBar->setBrush(Qt::green);
-        sheep->setHungerBar(hungerBar);
+        QGraphicsRectItem* healthBar = new QGraphicsRectItem(sheep);
+        healthBar->setRect(10, -5, sheep->MAX_HEALTH, 5);
+        healthBar->setBrush(Qt::green);
+        sheep->setHungerBar(healthBar);
 
         sheepList.append(sheep);
     }
 }
 
-void GameController::generateWolfs(int numWolfs, int viewWidth, int viewHeight)
+void GameController::spawnWolves(int numWolves, int viewWidth, int viewHeight)
 {
-    for (int i = 0; i < numWolfs; ++i) {
+    for (int i = 0; i < numWolves; ++i) {
         Wolf *wolf = new Wolf();
-        QPointF wolfSpawnPos = QPointF(QRandomGenerator::global()->bounded(viewWidth), 0);
+        QPointF wolfSpawnPos = generateRandomPosition(0, viewWidth, 0, 50);
         wolf->setPos(wolfSpawnPos);
         scene->addItem(wolf);
         wolf->hide();
         wolfList.append(wolf);
 
-        QGraphicsRectItem* hungerBar = new QGraphicsRectItem(wolf);
-        hungerBar->setRect(0, 0, wolf->MAX_HEALTH, 5);
-        hungerBar->setBrush(Qt::green);
-        wolf->setHungerBar(hungerBar);
+        QGraphicsRectItem* healthBar = new QGraphicsRectItem(wolf);
+        healthBar->setRect(0, 0, wolf->MAX_HEALTH, 5);
+        healthBar->setBrush(Qt::green);
+        wolf->setHungerBar(healthBar);
     }
 }
 
-void GameController::moveSheepTowardsPlants()
+void GameController::moveSheepToPlants()
 {
-    updateGame();
+    updateAnimalStates();
     if (plantList.isEmpty() || sheepList.isEmpty()) {
         return;
     }
@@ -104,22 +103,21 @@ void GameController::moveSheepTowardsPlants()
                 }
                 sheep->getHungerBar()->setRect(10, -10, newWidth, 5);
                 sheep->incrementEatenPlantCount();
-                totalEatenPlantCount++;
+                totalPlantsEaten++;
 
-                // Проверка на валидность sheepBirthRate и totalEatenPlantCount
                 if (sheepBirthRate >= 1 && sheepBirthRate <= 3) {
-                    if (sheepBirthRate == 1 && totalEatenPlantCount == 2) {
-                        generateSheeps(1, scene->width(), scene->height());
+                    if (sheepBirthRate == 1 && totalPlantsEaten == 2) {
+                        spawnSheep(1, scene->width(), scene->height());
                         sheep->resetEatenPlantCount();
-                        totalEatenPlantCount = 0;
-                    } else if (sheepBirthRate == 2 && totalEatenPlantCount == 1) {
-                        generateSheeps(1, scene->width(), scene->height());
+                        totalPlantsEaten = 0;
+                    } else if (sheepBirthRate == 2 && totalPlantsEaten == 1) {
+                        spawnSheep(1, scene->width(), scene->height());
                         sheep->resetEatenPlantCount();
-                        totalEatenPlantCount = 0;
-                    } else if (sheepBirthRate == 3 && totalEatenPlantCount == 1) {
-                        generateSheeps(2, scene->width(), scene->height());
+                        totalPlantsEaten = 0;
+                    } else if (sheepBirthRate == 3 && totalPlantsEaten == 1) {
+                        spawnSheep(2, scene->width(), scene->height());
                         sheep->resetEatenPlantCount();
-                        totalEatenPlantCount = 0;
+                        totalPlantsEaten = 0;
                     }
                 }
             } else {
@@ -130,7 +128,7 @@ void GameController::moveSheepTowardsPlants()
 }
 
 
-void GameController::moveWolfs()
+void GameController::moveWolves()
 {
     if (wolfList.isEmpty()) {
         return;
@@ -155,19 +153,17 @@ void GameController::moveWolfs()
                     }
 
                     wolf->getHungerBar()->setRect(10, -10, wolf->MAX_HEALTH, 5);
-                    totalEatenSheepCount++;
-
-                    // Проверка на валидность wolfBirthRate и totalEatenSheepCount
+                    totalSheepEaten++;
                     if (wolfBirthRate >= 1 && wolfBirthRate <= 3) {
-                        if (wolfBirthRate == 1 && totalEatenSheepCount == wolfList.size() * 2) {
-                            generateWolfs(1, scene->width(), scene->height());
-                            totalEatenSheepCount = 0;
-                        } else if (wolfBirthRate == 2 && totalEatenSheepCount == wolfList.size()) {
-                            generateWolfs(1, scene->width(), scene->height());
-                            totalEatenSheepCount = 0;
-                        } else if (wolfBirthRate == 3 && totalEatenSheepCount == wolfList.size()) {
-                            generateWolfs(2, scene->width(), scene->height());
-                            totalEatenSheepCount = 0;
+                        if (wolfBirthRate == 1 && totalSheepEaten >= wolfList.size() * 2) {
+                            spawnWolves(1, scene->width(), scene->height());
+                            totalSheepEaten = 0;
+                        } else if (wolfBirthRate == 2 && totalSheepEaten >= wolfList.size()) {
+                            spawnWolves(1, scene->width(), scene->height());
+                            totalSheepEaten = 0;
+                        } else if (wolfBirthRate == 3 && totalSheepEaten >= wolfList.size()) {
+                            spawnWolves(2, scene->width(), scene->height());
+                            totalSheepEaten = 0;
                         }
                     }
                 } else {
@@ -187,11 +183,7 @@ void GameController::moveWolfs()
     }
 }
 
-
-
-
-
-void GameController::updateGame()
+void GameController::updateAnimalStates()
 {
     for (auto sheep : sheepList) {
         qreal currentWidth = sheep->getHungerBar()->rect().width();
@@ -206,7 +198,10 @@ void GameController::updateGame()
         }
     }
 
-    for (auto wolf : wolfList) {
+    QMutableListIterator<Wolf*> it(wolfList);
+    while (it.hasNext()) {
+        Wolf* wolf = it.next();
+
         qreal currentWidth = wolf->getHungerBar()->rect().width();
         qreal newWidth = currentWidth - 0.05;
 
@@ -214,7 +209,7 @@ void GameController::updateGame()
 
         if (newWidth <= 0) {
             scene->removeItem(wolf);
-            wolfList.removeOne(wolf);
+            it.remove(); // Удаляем элемент из списка с помощью итератора
             delete wolf;
         }
     }
@@ -235,18 +230,19 @@ QList<Wolf*> GameController::getWolfList() const
     return wolfList;
 }
 
-void GameController::resetTotalEatenPlantCount(){
-    totalEatenPlantCount=0;
+void GameController::resetTotalEatenPlantCount()
+{
+    totalPlantsEaten = 0;
 }
 
-void GameController::resetTotalEatenSheepCount(){
-    totalEatenSheepCount=0;
+void GameController::resetTotalEatenSheepCount()
+{
+    totalSheepEaten = 0;
 }
 
-void GameController::reset(){
+void GameController::resetGame()
+{
     sheepList.clear();
     wolfList.clear();
     plantList.clear();
 }
-
-

@@ -2,7 +2,6 @@ C:/qt_projects/summer_practice_2024/build/Desktop_Qt_6_8_0_MSVC2022_64bit-Debug/
   C:/Progi/Qt/6.8.0/msvc2022_64/include/QtCore/QLineF \
   C:/Progi/Qt/6.8.0/msvc2022_64/include/QtCore/QList \
   C:/Progi/Qt/6.8.0/msvc2022_64/include/QtCore/QObject \
-  C:/Progi/Qt/6.8.0/msvc2022_64/include/QtCore/QPointF \
   C:/Progi/Qt/6.8.0/msvc2022_64/include/QtCore/QTimer \
   C:/Progi/Qt/6.8.0/msvc2022_64/include/QtCore/q20functional.h \
   C:/Progi/Qt/6.8.0/msvc2022_64/include/QtCore/q20iterator.h \

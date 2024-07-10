@@ -4,15 +4,12 @@
 #include <QMainWindow>
 #include <QGraphicsScene>
 #include "gamecontroller.h"
-#include <QList>
 #include <QTimer>
-#include <QPointF>
+#include <vector>
 
 namespace Ui {
 class chartwindow;
 }
-
-class GameController;
 
 class chartwindow : public QMainWindow
 {
@@ -25,17 +22,16 @@ public:
     ~chartwindow();
 
 private slots:
-    void updateChart();
+    void refreshChart();
 
 private:
-    GameController *gameController;
     Ui::chartwindow *ui;
-    QGraphicsScene *chartScene;
-    QTimer *chartUpdateTimer;
+    GameController *gameController;
+    QGraphicsScene *chartGraphicsScene;
+    QTimer *chartRefreshTimer;
     std::vector<int> plantData;
     std::vector<int> sheepData;
     std::vector<int> wolfData;
-
 };
 
 #endif // CHARTWINDOW_H

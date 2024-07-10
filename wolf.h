@@ -12,7 +12,7 @@ public:
     int getEatenSheepCount();
     void resetEatenSheepCount();
 private:
-    int totalEatenSheepCount;
+    int sheepEatenCount;
 };
 
 #endif // WOLF_H

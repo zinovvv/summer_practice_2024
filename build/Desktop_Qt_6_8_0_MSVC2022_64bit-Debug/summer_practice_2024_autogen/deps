@@ -2,7 +2,6 @@ summer_practice_2024_autogen/timestamp: \
 	C:/Progi/Qt/6.8.0/msvc2022_64/include/QtCore/QLineF \
 	C:/Progi/Qt/6.8.0/msvc2022_64/include/QtCore/QList \
 	C:/Progi/Qt/6.8.0/msvc2022_64/include/QtCore/QObject \
-	C:/Progi/Qt/6.8.0/msvc2022_64/include/QtCore/QPointF \
 	C:/Progi/Qt/6.8.0/msvc2022_64/include/QtCore/QTimer \
 	C:/Progi/Qt/6.8.0/msvc2022_64/include/QtCore/q20functional.h \
 	C:/Progi/Qt/6.8.0/msvc2022_64/include/QtCore/q20iterator.h \
@@ -389,8 +388,6 @@ summer_practice_2024_autogen/timestamp: \
 	C:/qt_projects/summer_practice_2024/chartwindow.h \
 	C:/qt_projects/summer_practice_2024/gamecontroller.cpp \
 	C:/qt_projects/summer_practice_2024/gamecontroller.h \
-	C:/qt_projects/summer_practice_2024/hunter.cpp \
-	C:/qt_projects/summer_practice_2024/hunter.h \
 	C:/qt_projects/summer_practice_2024/main.cpp \
 	C:/qt_projects/summer_practice_2024/mainwindow.cpp \
 	C:/qt_projects/summer_practice_2024/mainwindow.h \

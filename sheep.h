@@ -12,9 +12,7 @@ public:
     void incrementEatenPlantCount();
     void resetEatenPlantCount();
 private:
-    int eatenPlantCount;
+    int plantsEatenCount;
 };
-
-
 
 #endif // SHEEP_H

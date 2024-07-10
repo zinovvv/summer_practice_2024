@@ -1,24 +1,23 @@
 #include "wolf.h"
 
-Wolf::Wolf(QGraphicsItem *parent) : Animal(parent)
+Wolf::Wolf(QGraphicsItem *parent) : Animal(parent), sheepEatenCount(0)
 {
     QPixmap pixmap(":/images/wolf.jpg");
-    QPixmap scaledPixmap = pixmap.scaled(QSize(70,50));
+    QPixmap scaledPixmap = pixmap.scaled(QSize(70, 50));
     setPixmap(scaledPixmap);
-    totalEatenSheepCount = 0;
 }
 
 void Wolf::incrementEatenSheepCount()
 {
-    totalEatenSheepCount++;
+    sheepEatenCount++;
 }
 
 int Wolf::getEatenSheepCount()
 {
-    return totalEatenSheepCount;
+    return sheepEatenCount;
 }
 
 void Wolf::resetEatenSheepCount()
 {
-    totalEatenSheepCount = 0;
+    sheepEatenCount = 0;
 }

@@ -14,8 +14,8 @@ class Animal : public QObject, public QGraphicsPixmapItem
 public:
     explicit Animal(QGraphicsItem *parent = nullptr);
     static constexpr qreal MAX_HEALTH = 50;
-    QGraphicsRectItem* getHungerBar() const { return hungerBar; }
-    void setHungerBar(QGraphicsRectItem* bar) { hungerBar = bar; }
+    QGraphicsRectItem* getHungerBar() const { return healthBar; }
+    void setHungerBar(QGraphicsRectItem* bar) { healthBar = bar; }
     void moveTowards(QGraphicsItem* target);
     bool hasReached(QGraphicsItem* target, qreal threshold = 30.0);
 
@@ -23,7 +23,7 @@ public:
     QGraphicsItem* findNearestItem(const QList<T*>& itemList);
 
 protected:
-    QGraphicsRectItem* hungerBar = nullptr;
+    QGraphicsRectItem* healthBar = nullptr;
 };
 
 template <typename T>
@@ -46,7 +46,5 @@ QGraphicsItem* Animal::findNearestItem(const QList<T*>& itemList)
     }
     return nearestItem;
 }
-
-
 
 #endif // ANIMAL_H

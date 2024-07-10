@@ -330,12 +330,6 @@
 			null
 		],
 		[
-			"C:/qt_projects/summer_practice_2024/hunter.h",
-			"MU",
-			"EWIEGA46WW/moc_hunter.cpp",
-			null
-		],
-		[
 			"C:/qt_projects/summer_practice_2024/mainwindow.h",
 			"MU",
 			"EWIEGA46WW/moc_mainwindow.cpp",
@@ -418,7 +412,6 @@
 		[ "C:/qt_projects/summer_practice_2024/animal.cpp", "MU", null ],
 		[ "C:/qt_projects/summer_practice_2024/chartwindow.cpp", "MU", null ],
 		[ "C:/qt_projects/summer_practice_2024/gamecontroller.cpp", "MU", null ],
-		[ "C:/qt_projects/summer_practice_2024/hunter.cpp", "MU", null ],
 		[ "C:/qt_projects/summer_practice_2024/main.cpp", "MU", null ],
 		[ "C:/qt_projects/summer_practice_2024/mainwindow.cpp", "MU", null ],
 		[ "C:/qt_projects/summer_practice_2024/plant.cpp", "MU", null ],

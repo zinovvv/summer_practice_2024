@@ -29,7 +29,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         wolf.h wolf.cpp
         gamecontroller.h gamecontroller.cpp
         animal.h animal.cpp
-        hunter.h hunter.cpp
+
         chartwindow.h chartwindow.cpp chartwindow.ui
     )
 # D

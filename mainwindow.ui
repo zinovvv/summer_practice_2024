@@ -164,7 +164,7 @@
      <item>
       <widget class="QSpinBox" name="plantsspinBox">
        <property name="maximum">
-        <number>1000</number>
+        <number>30</number>
        </property>
       </widget>
      </item>
@@ -192,8 +192,11 @@
          <height>0</height>
         </size>
        </property>
+       <property name="minimum">
+        <number>1</number>
+       </property>
        <property name="maximum">
-        <number>1000</number>
+        <number>30</number>
        </property>
       </widget>
      </item>
@@ -212,8 +215,11 @@
      </item>
      <item>
       <widget class="QSpinBox" name="sheepsspinBox">
+       <property name="minimum">
+        <number>1</number>
+       </property>
        <property name="maximum">
-        <number>1000</number>
+        <number>30</number>
        </property>
       </widget>
      </item>
@@ -277,7 +283,7 @@
      <item>
       <widget class="QLabel" name="label_8">
        <property name="text">
-        <string>Частота генерации растений</string>
+        <string>Скорость роста растений</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>

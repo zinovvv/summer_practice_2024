@@ -4,7 +4,6 @@ C:/qt_projects/summer_practice_2024/mainwindow.h
  mdp:C:/Progi/Qt/6.8.0/msvc2022_64/include/QtCore/QLineF
  mdp:C:/Progi/Qt/6.8.0/msvc2022_64/include/QtCore/QList
  mdp:C:/Progi/Qt/6.8.0/msvc2022_64/include/QtCore/QObject
- mdp:C:/Progi/Qt/6.8.0/msvc2022_64/include/QtCore/QPointF
  mdp:C:/Progi/Qt/6.8.0/msvc2022_64/include/QtCore/QTimer
  mdp:C:/Progi/Qt/6.8.0/msvc2022_64/include/QtCore/q20functional.h
  mdp:C:/Progi/Qt/6.8.0/msvc2022_64/include/QtCore/q20iterator.h
@@ -332,7 +331,6 @@ C:/qt_projects/summer_practice_2024/chartwindow.h
  mdp:C:/Progi/Qt/6.8.0/msvc2022_64/include/QtCore/QLineF
  mdp:C:/Progi/Qt/6.8.0/msvc2022_64/include/QtCore/QList
  mdp:C:/Progi/Qt/6.8.0/msvc2022_64/include/QtCore/QObject
- mdp:C:/Progi/Qt/6.8.0/msvc2022_64/include/QtCore/QPointF
  mdp:C:/Progi/Qt/6.8.0/msvc2022_64/include/QtCore/QTimer
  mdp:C:/Progi/Qt/6.8.0/msvc2022_64/include/QtCore/q20functional.h
  mdp:C:/Progi/Qt/6.8.0/msvc2022_64/include/QtCore/q20iterator.h
